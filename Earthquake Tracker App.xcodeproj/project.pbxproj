@@ -13,13 +13,19 @@
 		FA1F00EB2863725F002EED7A /* Earthquake_Tracker_App.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FA1F00E92863725F002EED7A /* Earthquake_Tracker_App.xcdatamodeld */; };
 		FA1F00ED28637263002EED7A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA1F00EC28637263002EED7A /* Assets.xcassets */; };
 		FA1F00F028637263002EED7A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA1F00EE28637263002EED7A /* LaunchScreen.storyboard */; };
-		FA72DE9328638E2C0082BBE0 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = FA72DE9228638E2C0082BBE0 /* SnapKit */; };
-		FA72DE95286395950082BBE0 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA72DE94286395950082BBE0 /* TableViewCell.swift */; };
+		FA3EA93C2866F1120092B078 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = FA3EA93B2866F1120092B078 /* SnapKit */; };
+		FA3EA93F286713220092B078 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = FA3EA93E286713220092B078 /* Lottie */; };
+		FA3EA94928672D020092B078 /* TableViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3EA94828672D020092B078 /* TableViewViewController.swift */; };
+		FA3EA94C286733080092B078 /* EarthquakeTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3EA94B286733080092B078 /* EarthquakeTracker.swift */; };
+		FA3EA95728673B720092B078 /* magnitude.json in Resources */ = {isa = PBXBuildFile; fileRef = FA3EA95628673B720092B078 /* magnitude.json */; };
+		FA3EA95928673B770092B078 /* globe.json in Resources */ = {isa = PBXBuildFile; fileRef = FA3EA95828673B770092B078 /* globe.json */; };
+		FA3EA95F286742300092B078 /* depth.json in Resources */ = {isa = PBXBuildFile; fileRef = FA3EA95E286742300092B078 /* depth.json */; };
+		FA3EA967286764DB0092B078 /* location.json in Resources */ = {isa = PBXBuildFile; fileRef = FA3EA966286764DB0092B078 /* location.json */; };
+		FA72DE95286395950082BBE0 /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA72DE94286395950082BBE0 /* HomeTableViewCell.swift */; };
 		FA72DE97286398D10082BBE0 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA72DE96286398D10082BBE0 /* TabBarController.swift */; };
-		FA72DE9928639AC80082BBE0 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA72DE9828639AC80082BBE0 /* MapViewController.swift */; };
-		FA72DE9D2863AA890082BBE0 /* MapProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA72DE9C2863AA890082BBE0 /* MapProperties.swift */; };
-		FA72DEA12863B1970082BBE0 /* HomeProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA72DEA02863B1970082BBE0 /* HomeProperties.swift */; };
-		FA72DEA52863B3E80082BBE0 /* CellProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA72DEA42863B3E80082BBE0 /* CellProperties.swift */; };
+		FA72DE9D2863AA890082BBE0 /* MapVcComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA72DE9C2863AA890082BBE0 /* MapVcComponents.swift */; };
+		FA72DEA12863B1970082BBE0 /* HomeVcComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA72DEA02863B1970082BBE0 /* HomeVcComponents.swift */; };
+		FA72DEA52863B3E80082BBE0 /* HomeVcCellComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA72DEA42863B3E80082BBE0 /* HomeVcCellComponents.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,12 +37,17 @@
 		FA1F00EC28637263002EED7A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FA1F00EF28637263002EED7A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FA1F00F128637263002EED7A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FA72DE94286395950082BBE0 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		FA3EA94828672D020092B078 /* TableViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewViewController.swift; sourceTree = "<group>"; };
+		FA3EA94B286733080092B078 /* EarthquakeTracker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EarthquakeTracker.swift; sourceTree = "<group>"; };
+		FA3EA95628673B720092B078 /* magnitude.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = magnitude.json; path = ../../../../../../Downloads/magnitude.json; sourceTree = "<group>"; };
+		FA3EA95828673B770092B078 /* globe.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = globe.json; path = ../../../../../../Downloads/globe.json; sourceTree = "<group>"; };
+		FA3EA95E286742300092B078 /* depth.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = depth.json; path = ../../../../../../Downloads/depth.json; sourceTree = "<group>"; };
+		FA3EA966286764DB0092B078 /* location.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = location.json; path = ../../../../../../Downloads/location.json; sourceTree = "<group>"; };
+		FA72DE94286395950082BBE0 /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
 		FA72DE96286398D10082BBE0 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
-		FA72DE9828639AC80082BBE0 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
-		FA72DE9C2863AA890082BBE0 /* MapProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapProperties.swift; sourceTree = "<group>"; };
-		FA72DEA02863B1970082BBE0 /* HomeProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeProperties.swift; sourceTree = "<group>"; };
-		FA72DEA42863B3E80082BBE0 /* CellProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellProperties.swift; sourceTree = "<group>"; };
+		FA72DE9C2863AA890082BBE0 /* MapVcComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapVcComponents.swift; sourceTree = "<group>"; };
+		FA72DEA02863B1970082BBE0 /* HomeVcComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVcComponents.swift; sourceTree = "<group>"; };
+		FA72DEA42863B3E80082BBE0 /* HomeVcCellComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVcCellComponents.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,7 +55,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FA72DE9328638E2C0082BBE0 /* SnapKit in Frameworks */,
+				FA3EA93C2866F1120092B078 /* SnapKit in Frameworks */,
+				FA3EA93F286713220092B078 /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,45 +82,82 @@
 		FA1F00DF2863725F002EED7A /* Earthquake Tracker App */ = {
 			isa = PBXGroup;
 			children = (
-				FA72DEA32863B1E20082BBE0 /* Models */,
+				FA3EA9532867389C0092B078 /* Animations */,
+				FA3EA94A286732F90092B078 /* Models */,
+				FA3EA9392866EF890092B078 /* Delegate&Assets */,
 				FA72DEA22863B1D60082BBE0 /* Controllers */,
-				FA72DE9B2863AA3F0082BBE0 /* Properties */,
-				FA1F00E02863725F002EED7A /* AppDelegate.swift */,
-				FA1F00E22863725F002EED7A /* SceneDelegate.swift */,
-				FA72DE94286395950082BBE0 /* TableViewCell.swift */,
-				FA1F00EC28637263002EED7A /* Assets.xcassets */,
-				FA1F00EE28637263002EED7A /* LaunchScreen.storyboard */,
+				FA72DE9B2863AA3F0082BBE0 /* UIComponents */,
 				FA1F00F128637263002EED7A /* Info.plist */,
 				FA1F00E92863725F002EED7A /* Earthquake_Tracker_App.xcdatamodeld */,
 			);
 			path = "Earthquake Tracker App";
 			sourceTree = "<group>";
 		};
-		FA72DE9B2863AA3F0082BBE0 /* Properties */ = {
+		FA3EA9372866EF300092B078 /* TableviewCellViews */ = {
 			isa = PBXGroup;
 			children = (
-				FA72DE9C2863AA890082BBE0 /* MapProperties.swift */,
-				FA72DEA02863B1970082BBE0 /* HomeProperties.swift */,
-				FA72DEA42863B3E80082BBE0 /* CellProperties.swift */,
+				FA72DE94286395950082BBE0 /* HomeTableViewCell.swift */,
 			);
-			path = Properties;
+			path = TableviewCellViews;
+			sourceTree = "<group>";
+		};
+		FA3EA9382866EF670092B078 /* ViewControllerViews */ = {
+			isa = PBXGroup;
+			children = (
+				FA1F00E42863725F002EED7A /* HomeViewController.swift */,
+				FA3EA94828672D020092B078 /* TableViewViewController.swift */,
+			);
+			path = ViewControllerViews;
+			sourceTree = "<group>";
+		};
+		FA3EA9392866EF890092B078 /* Delegate&Assets */ = {
+			isa = PBXGroup;
+			children = (
+				FA1F00E02863725F002EED7A /* AppDelegate.swift */,
+				FA1F00E22863725F002EED7A /* SceneDelegate.swift */,
+				FA1F00EC28637263002EED7A /* Assets.xcassets */,
+				FA1F00EE28637263002EED7A /* LaunchScreen.storyboard */,
+			);
+			path = "Delegate&Assets";
+			sourceTree = "<group>";
+		};
+		FA3EA94A286732F90092B078 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				FA3EA94B286733080092B078 /* EarthquakeTracker.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		FA3EA9532867389C0092B078 /* Animations */ = {
+			isa = PBXGroup;
+			children = (
+				FA3EA95828673B770092B078 /* globe.json */,
+				FA3EA95E286742300092B078 /* depth.json */,
+				FA3EA95628673B720092B078 /* magnitude.json */,
+				FA3EA966286764DB0092B078 /* location.json */,
+			);
+			path = Animations;
+			sourceTree = "<group>";
+		};
+		FA72DE9B2863AA3F0082BBE0 /* UIComponents */ = {
+			isa = PBXGroup;
+			children = (
+				FA72DE9C2863AA890082BBE0 /* MapVcComponents.swift */,
+				FA72DEA02863B1970082BBE0 /* HomeVcComponents.swift */,
+				FA72DEA42863B3E80082BBE0 /* HomeVcCellComponents.swift */,
+			);
+			path = UIComponents;
 			sourceTree = "<group>";
 		};
 		FA72DEA22863B1D60082BBE0 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
 				FA72DE96286398D10082BBE0 /* TabBarController.swift */,
-				FA1F00E42863725F002EED7A /* HomeViewController.swift */,
-				FA72DE9828639AC80082BBE0 /* MapViewController.swift */,
+				FA3EA9382866EF670092B078 /* ViewControllerViews */,
+				FA3EA9372866EF300092B078 /* TableviewCellViews */,
 			);
 			path = Controllers;
-			sourceTree = "<group>";
-		};
-		FA72DEA32863B1E20082BBE0 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -128,7 +177,8 @@
 			);
 			name = "Earthquake Tracker App";
 			packageProductDependencies = (
-				FA72DE9228638E2C0082BBE0 /* SnapKit */,
+				FA3EA93B2866F1120092B078 /* SnapKit */,
+				FA3EA93E286713220092B078 /* Lottie */,
 			);
 			productName = "Earthquake Tracker App";
 			productReference = FA1F00DD2863725F002EED7A /* Earthquake Tracker App.app */;
@@ -159,7 +209,8 @@
 			);
 			mainGroup = FA1F00D42863725F002EED7A;
 			packageReferences = (
-				FA72DE9128638E2C0082BBE0 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				FA3EA93A2866F1120092B078 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				FA3EA93D286713220092B078 /* XCRemoteSwiftPackageReference "lottie-ios" */,
 			);
 			productRefGroup = FA1F00DE2863725F002EED7A /* Products */;
 			projectDirPath = "";
@@ -175,8 +226,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA3EA95728673B720092B078 /* magnitude.json in Resources */,
 				FA1F00F028637263002EED7A /* LaunchScreen.storyboard in Resources */,
 				FA1F00ED28637263002EED7A /* Assets.xcassets in Resources */,
+				FA3EA95F286742300092B078 /* depth.json in Resources */,
+				FA3EA967286764DB0092B078 /* location.json in Resources */,
+				FA3EA95928673B770092B078 /* globe.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -187,16 +242,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FA72DE95286395950082BBE0 /* TableViewCell.swift in Sources */,
-				FA72DEA12863B1970082BBE0 /* HomeProperties.swift in Sources */,
+				FA72DE95286395950082BBE0 /* HomeTableViewCell.swift in Sources */,
+				FA72DEA12863B1970082BBE0 /* HomeVcComponents.swift in Sources */,
 				FA1F00E52863725F002EED7A /* HomeViewController.swift in Sources */,
-				FA72DE9D2863AA890082BBE0 /* MapProperties.swift in Sources */,
+				FA72DE9D2863AA890082BBE0 /* MapVcComponents.swift in Sources */,
 				FA1F00EB2863725F002EED7A /* Earthquake_Tracker_App.xcdatamodeld in Sources */,
 				FA72DE97286398D10082BBE0 /* TabBarController.swift in Sources */,
 				FA1F00E12863725F002EED7A /* AppDelegate.swift in Sources */,
+				FA3EA94928672D020092B078 /* TableViewViewController.swift in Sources */,
 				FA1F00E32863725F002EED7A /* SceneDelegate.swift in Sources */,
-				FA72DEA52863B3E80082BBE0 /* CellProperties.swift in Sources */,
-				FA72DE9928639AC80082BBE0 /* MapViewController.swift in Sources */,
+				FA3EA94C286733080092B078 /* EarthquakeTracker.swift in Sources */,
+				FA72DEA52863B3E80082BBE0 /* HomeVcCellComponents.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -408,7 +464,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		FA72DE9128638E2C0082BBE0 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+		FA3EA93A2866F1120092B078 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SnapKit/SnapKit";
 			requirement = {
@@ -416,13 +472,26 @@
 				minimumVersion = 5.0.0;
 			};
 		};
+		FA3EA93D286713220092B078 /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-ios";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		FA72DE9228638E2C0082BBE0 /* SnapKit */ = {
+		FA3EA93B2866F1120092B078 /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = FA72DE9128638E2C0082BBE0 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			package = FA3EA93A2866F1120092B078 /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
+		};
+		FA3EA93E286713220092B078 /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FA3EA93D286713220092B078 /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			productName = Lottie;
 		};
 /* End XCSwiftPackageProductDependency section */
 

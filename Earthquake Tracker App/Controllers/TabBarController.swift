@@ -9,24 +9,25 @@ import UIKit
 
 class TabBarController: UITabBarController {
 
+    // MARK: - Tab Bar Settings
     override func viewDidLoad() {
         super.viewDidLoad()
 
         view.backgroundColor = .systemBackground
-        
+
         
         let homeVC = UINavigationController(rootViewController: HomeViewController())
-        let mapVC = UINavigationController(rootViewController: MapViewController())
+        let tableViewVC = UINavigationController(rootViewController: TableViewViewController())
         
         homeVC.tabBarItem.image = UIImage(systemName: "waveform.path.ecg")
-        mapVC.tabBarItem.image = UIImage(systemName: "mappin.and.ellipse")
+        tableViewVC.tabBarItem.image = UIImage(systemName: "list.bullet.indent")
         
         homeVC.title = "Home"
-        mapVC.title = "Map"
+        tableViewVC.title = "List"
         
         tabBar.tintColor = .label
         
-        setViewControllers([homeVC, mapVC], animated: true)
+        setViewControllers([homeVC,tableViewVC], animated: true)
     }
 
 }
