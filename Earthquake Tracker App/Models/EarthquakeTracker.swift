@@ -8,27 +8,17 @@
 import Foundation
 
 // MARK: - EarthquakeTracker
-struct EarthquakeTracker {
-    let status: Bool
-    let desc: String
+struct EarthquakeTracker : Decodable {
     let result: [Result]
 }
 
 // MARK: - Result
-struct Result {
-    let id: ID
+struct Result : Decodable {
     let mag, lng, lat: Double
     let lokasyon: String
     let depth: Double
     let coordinates: [Double]
     let title: String
-    let rev: NSNull
-    let timestamp: Int
-    let dateStamp, date, hash, hash2: String
-}
-
-// MARK: - ID
-struct ID {
-    let oid: String
+    let date: String
 }
 
