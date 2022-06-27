@@ -7,18 +7,16 @@
 
 import Foundation
 
-// MARK: - EarthquakeTracker
-struct EarthquakeTracker : Decodable {
+struct EarthquakeTracker : Codable {
     let result: [Result]
 }
 
-// MARK: - Result
-struct Result : Decodable {
+struct Result : Codable {
     let mag, lng, lat: Double
     let lokasyon: String
     let depth: Double
-    let coordinates: [Double]
     let title: String
     let date: String
 }
+
 

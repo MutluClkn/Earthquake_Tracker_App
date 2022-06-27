@@ -13,12 +13,22 @@ struct HomeVcComponents{
     //MARK: - Home View Controller UI Components
     
     //Titles
+    public let latestEarthquakeLabel : UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.text = "Latest Earthquake"
+        label.textAlignment = .center
+        label.font = .systemFont(ofSize: 20, weight: .bold)
+        label.numberOfLines = 0
+        return label
+    }()
     public let magnitudeLabel : UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Magnitude"
         label.textAlignment = .center
         label.font = .systemFont(ofSize: 18, weight: .bold)
+        label.numberOfLines = 0
         return label
     }()
     public let depthLabel : UILabel = {
@@ -27,6 +37,7 @@ struct HomeVcComponents{
         label.text = "Depth"
         label.textAlignment = .center
         label.font = .systemFont(ofSize: 18, weight: .bold)
+        label.numberOfLines = 0
         return label
     }()
     public let cityLabel : UILabel = {
@@ -35,6 +46,7 @@ struct HomeVcComponents{
         label.text = "Location"
         label.textAlignment = .center
         label.font = .systemFont(ofSize: 18, weight: .bold)
+        label.numberOfLines = 0
         return label
     }()
     
@@ -48,20 +60,13 @@ struct HomeVcComponents{
         label.numberOfLines = 0
         return label
     }()
-    public let dateLabel : UILabel = {
+    public let dateAndTimeLabel : UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "22.06.2022"
-        label.textAlignment = .left
+        label.text = "22.06.2022 22:16:2022"
+        label.textAlignment = .center
         label.font = .systemFont(ofSize: 18, weight: .medium)
-        return label
-    }()
-    public let timeLabel : UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "22:12:23"
-        label.textAlignment = .left
-        label.font = .systemFont(ofSize: 18, weight: .medium)
+        label.numberOfLines = 0
         return label
     }()
     
@@ -72,6 +77,7 @@ struct HomeVcComponents{
         label.text = "4.1"
         label.textAlignment = .center
         label.font = .systemFont(ofSize: 18, weight: .medium)
+        label.numberOfLines = 0
         return label
     }()
     public let depthLevel : UILabel = {
@@ -80,6 +86,7 @@ struct HomeVcComponents{
         label.text = "12km"
         label.textAlignment = .center
         label.font = .systemFont(ofSize: 18, weight: .medium)
+        label.numberOfLines = 0
         return label
     }()
 }

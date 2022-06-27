@@ -89,7 +89,6 @@
 				FA3EA94A286732F90092B078 /* Models */,
 				FA72DEA22863B1D60082BBE0 /* Views */,
 				FAA2CC42286868FE00A24BF8 /* ViewModels */,
-				FA72DE9B2863AA3F0082BBE0 /* UIComponents */,
 				FA1F00F128637263002EED7A /* Info.plist */,
 			);
 			path = "Earthquake Tracker App";
@@ -154,6 +153,7 @@
 		FA72DEA22863B1D60082BBE0 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				FA72DE9B2863AA3F0082BBE0 /* UIComponents */,
 				FAA2CC3E28685A0500A24BF8 /* TabBarController */,
 				FA3EA9382866EF670092B078 /* ViewControllerViews */,
 				FA3EA9372866EF300092B078 /* TableviewCellViews */,

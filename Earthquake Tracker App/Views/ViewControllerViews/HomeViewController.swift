@@ -18,7 +18,8 @@ class HomeViewController: UIViewController, MKMapViewDelegate {
     // MARK: - Fetching datas from MapProperties.swift
     let mapProperties = MapVcComponents()
     
-    private var earthquakeViewModel : EarthquakeViewModel!
+    // API Caller
+    private var api = APICaller()
     
     // AnimationView
     let animationView = AnimationView()
@@ -36,6 +37,8 @@ class HomeViewController: UIViewController, MKMapViewDelegate {
         view.addSubview(properties.depthLevel)
         view.addSubview(properties.citySubtitle)
         view.addSubview(properties.cityLabel)
+        view.addSubview(properties.latestEarthquakeLabel)
+        view.addSubview(properties.dateAndTimeLabel)
 
         //Map
         view.addSubview(mapProperties.mapView)
@@ -48,26 +51,11 @@ class HomeViewController: UIViewController, MKMapViewDelegate {
         
         constraints()
         
+        properties.dateAndTimeLabel.text = ""
+        
+        api.performRequest(urlString: api.earthquakeURL)
+        
     }
-    
-//    func fetchData() {
-//        let url = URL(string: "https://api.orhanaydogdu.com.tr/deprem/index.php?date=2020-01-01&limit=100")
-//        
-//        APICaller.getData(url: url!) { (result) in
-//            if let result = result {
-//                self.earthquakeViewModel = EarthquakeViewModel(list: result)
-//                DispatchQueue.main.async {
-//                    for resultAtIndexPath in 0...100{
-////                        properties.magnitudeLevel.text = String(
-//                        let annotation = MKPointAnnotation()
-//                    }
-//                    
-//                }
-//            }
-//        }
-//
-//        
-//    }
     
     // MARK: - Animation Settings
     private func magnitudeAnimation(){
@@ -105,8 +93,18 @@ class HomeViewController: UIViewController, MKMapViewDelegate {
             make.height.equalTo(view.frame.height * 0.6)
         }
         
+        properties.latestEarthquakeLabel.snp.makeConstraints { make in
+            make.centerX.equalTo(view.snp.centerX)
+            make.top.equalTo(mapProperties.mapView.snp_bottomMargin).offset(25)
+        }
+        
+        properties.dateAndTimeLabel.snp.makeConstraints { make in
+            make.centerX.equalTo(view.snp.centerX)
+            make.top.equalTo(properties.latestEarthquakeLabel.snp_bottomMargin).offset(15)
+        }
+        
         magnitudeAnimationView.snp.makeConstraints { make in
-            make.top.equalTo(mapProperties.mapView.snp_bottomMargin).offset(30)
+            make.top.equalTo(properties.dateAndTimeLabel.snp_bottomMargin).offset(30)
             make.width.equalTo(50)
             make.height.equalTo(50)
             make.centerX.equalTo(properties.magnitudeLabel)
@@ -114,14 +112,13 @@ class HomeViewController: UIViewController, MKMapViewDelegate {
         
         properties.magnitudeLabel.snp.makeConstraints { make in
             make.top.equalTo(magnitudeAnimationView.snp_bottomMargin).offset(10)
-            make.left.equalTo(view).offset(10)
-            make.width.equalTo(view.frame.width * 0.3)
+            make.left.equalTo(view).offset(15)
+            make.right.equalTo(properties.cityLabel.snp_leftMargin).offset(-15)
         }
         
         properties.magnitudeLevel.snp.makeConstraints { make in
             make.top.equalTo(properties.magnitudeLabel.snp_bottomMargin).offset(10)
             make.centerX.equalTo(properties.magnitudeLabel)
-            make.width.equalTo(view.frame.width * 0.3)
         }
         
         depthAnimationView.snp.makeConstraints { make in
@@ -133,15 +130,13 @@ class HomeViewController: UIViewController, MKMapViewDelegate {
         
         properties.depthLabel.snp.makeConstraints { make in
             make.centerY.equalTo(properties.magnitudeLabel)
-            make.left.equalTo(properties.magnitudeLabel.snp_rightMargin).offset(10)
-            make.right.equalTo(properties.cityLabel.snp_leftMargin).offset(-10)
-            make.width.equalTo(view.frame.width * 0.3)
+            make.right.equalTo(view).offset(-15)
+            make.left.equalTo(properties.cityLabel.snp_rightMargin).offset(15)
         }
         
         properties.depthLevel.snp.makeConstraints { make in
             make.top.equalTo(properties.depthLabel.snp_bottomMargin).offset(10)
             make.centerX.equalTo(properties.depthLabel)
-            make.width.equalTo(view.frame.width * 0.3)
         }
         
         cityAnimationView.snp.makeConstraints { make in
@@ -153,13 +148,12 @@ class HomeViewController: UIViewController, MKMapViewDelegate {
         
         properties.cityLabel.snp.makeConstraints { make in
             make.centerY.equalTo(properties.depthLabel)
-            make.width.equalTo(view.frame.width * 0.3)
-            make.right.equalTo(view).offset(-10)
+            make.centerX.equalTo(view.snp.centerX)
         }
+        
         properties.citySubtitle.snp.makeConstraints { make in
             make.top.equalTo(properties.cityLabel.snp_bottomMargin).offset(10)
             make.centerX.equalTo(properties.cityLabel)
-            make.width.equalTo(view.frame.width * 0.3)
         }
     }
 }

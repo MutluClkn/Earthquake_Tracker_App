@@ -11,11 +11,11 @@ struct EarthquakeViewModel{
     let list : [Result]
 }
 
-extension EarthquakeViewModel{
-    
-    func resultsAtIndexPath(_ index: Int) -> AnnotationViewModel{
-        let results = self.list[index]
-        return AnnotationViewModel(result: results)
-    }
-    
-}
+//extension EarthquakeViewModel{
+//    
+//    func resultsAtIndexPath(_ index: Int) -> AnnotationViewModel{
+//        let results = self.list[index]
+//        return AnnotationViewModel(result: results)
+//    }
+//    
+//}
