@@ -13,7 +13,8 @@ struct EarthquakeTracker : Codable {
 
 struct Datum : Codable {
     let m, lon, lat: String
-    let other: String
+    let city: String
+    let district: String
     let depth: String
     let time: String
 }

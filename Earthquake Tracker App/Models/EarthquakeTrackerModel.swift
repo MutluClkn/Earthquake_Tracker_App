@@ -12,7 +12,8 @@ struct EarthquakeTrackerModel {
     let magnitude : String
     let longitude : String
     let latitude : String
-    let location : String
+    let city : String
+    let district : String
     let depth : String
     let date : String
     

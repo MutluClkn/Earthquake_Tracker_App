@@ -71,11 +71,12 @@ class HomeViewController: UIViewController, MKMapViewDelegate, EarthquakeTracker
     func didUpdateView (_ apiCaller : APICaller, tracker : EarthquakeTrackerModel){
         DispatchQueue.main.async {
             self.properties.magnitudeLevel.text = tracker.magnitude
-            self.properties.citySubtitle.text = tracker.location
+            self.properties.citySubtitle.text = tracker.city
             self.properties.depthLevel.text = tracker.depth
             self.properties.dateAndTimeLabel.text = tracker.date
             let annotation = MKPointAnnotation()
-            annotation.title = tracker.location
+            annotation.title = tracker.city
+            annotation.subtitle = tracker.district
             if let latitude = Double(tracker.latitude){
                 if let longtitude = Double(tracker.longitude){
                     let coordinate = CLLocationCoordinate2D(latitude: latitude, longitude: longtitude)

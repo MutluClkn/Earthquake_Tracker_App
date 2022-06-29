@@ -42,14 +42,15 @@ struct APICaller {
         let decoder = JSONDecoder()
         do {
             let decodedData = try decoder.decode(EarthquakeTracker.self, from: earthquakeData)
-            let location = decodedData.data[0].other
+            let city = decodedData.data[0].city
+            let district = decodedData.data[0].district
             let magnitude = decodedData.data[0].m
             let longtitude = decodedData.data[0].lon
             let latitude = decodedData.data[0].lat
             let depth = decodedData.data[0].depth
             let date = decodedData.data[0].time
             
-            let earthquakeTracker = EarthquakeTrackerModel(magnitude: magnitude, longitude: longtitude, latitude: latitude, location: location, depth: depth, date: date)
+            let earthquakeTracker = EarthquakeTrackerModel(magnitude: magnitude, longitude: longtitude, latitude: latitude, city: city,  district: district, depth: depth, date: date)
             
 //            let magnitudeColor = earthquakeTracker.colorOfMagnitude
             return earthquakeTracker

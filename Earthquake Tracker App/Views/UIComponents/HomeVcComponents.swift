@@ -54,7 +54,7 @@ struct HomeVcComponents{
     public let citySubtitle : UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "Atakum (Samsun)"
+        label.text = ""
         label.textAlignment = .center
         label.font = .systemFont(ofSize: 18, weight: .medium)
         label.numberOfLines = 0
@@ -63,7 +63,7 @@ struct HomeVcComponents{
     public let dateAndTimeLabel : UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "22.06.2022 22:16:2022"
+        label.text = ""
         label.textAlignment = .center
         label.font = .systemFont(ofSize: 18, weight: .medium)
         label.numberOfLines = 0
@@ -74,7 +74,7 @@ struct HomeVcComponents{
     public let magnitudeLevel : UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "4.1"
+        label.text = ""
         label.textAlignment = .center
         label.font = .systemFont(ofSize: 18, weight: .medium)
         label.numberOfLines = 0
@@ -83,7 +83,7 @@ struct HomeVcComponents{
     public let depthLevel : UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "12km"
+        label.text = ""
         label.textAlignment = .center
         label.font = .systemFont(ofSize: 18, weight: .medium)
         label.numberOfLines = 0
