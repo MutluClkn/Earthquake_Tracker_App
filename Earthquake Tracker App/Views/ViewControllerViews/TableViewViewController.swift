@@ -9,6 +9,9 @@ import UIKit
 
 class TableViewViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
+    // API Caller
+    private var api = APICaller()
+    
     // UI Component
     let tableView : UITableView = {
         let tv = UITableView(frame: .zero, style: .plain)
@@ -19,9 +22,12 @@ class TableViewViewController: UIViewController, UITableViewDelegate, UITableVie
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
+        view.addSubview(tableView)
     
         tableView.delegate = self
         tableView.dataSource = self
+        
+        api.performRequest(urlString: api.earthquakeURL)
         
     }
     override func viewDidLayoutSubviews() {
@@ -35,7 +41,10 @@ class TableViewViewController: UIViewController, UITableViewDelegate, UITableVie
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: HomeTableViewCell.identifier, for: indexPath) as? HomeTableViewCell else{ return UITableViewCell()}
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: HomeTableViewCell.identifier, for: indexPath) as? HomeTableViewCell else{
+            return UITableViewCell()
+        }
+        
         return cell
     }
     

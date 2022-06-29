@@ -8,63 +8,59 @@
 import Foundation
 import UIKit
 
+protocol EarthquakeTrackerDelegate {
+    func didUpdateView(_ apiCaller : APICaller, tracker : EarthquakeTrackerModel)
+    func didFailWithError(error: Error)
+}
+
 struct APICaller {
-    let earthquakeURL = "https://api.orhanaydogdu.com.tr/deprem/index.php?date=2020-01-01&limit=100"
+    
+    let earthquakeURL = "https://www.mertkose.net/api/son-depremler/"
+    
+    var delegate : EarthquakeTrackerDelegate?
     
     func performRequest(urlString: String){
         if let url = URL(string: urlString){
             let session = URLSession(configuration: .default)
             let task = session.dataTask(with: url) { data, response, error in
                 if error != nil{
-                    print(error!)
+                    self.delegate?.didFailWithError(error: error!)
                     return
                 }
                 
                 if let safeData = data {
-                    self.parseJSON(earthquakeData: safeData)
+                    if let earthquakeTracker = self.parseJSON(earthquakeData: safeData){
+                        self.delegate?.didUpdateView(self, tracker: earthquakeTracker)
+                    }
                 }
             }
             task.resume()
         }
     }
     
-    func parseJSON(earthquakeData : Data){
+    func parseJSON(earthquakeData : Data) -> EarthquakeTrackerModel?{
         let decoder = JSONDecoder()
         do {
             let decodedData = try decoder.decode(EarthquakeTracker.self, from: earthquakeData)
-            let location = decodedData.result[0].lokasyon
-            let magnitude = decodedData.result[0].mag
-            let longtitude = decodedData.result[0].lng
-            let latitude = decodedData.result[0].lat
-            let depth = decodedData.result[0].depth
-            let title = decodedData.result[0].title
-            let date = decodedData.result[0].date
+            let location = decodedData.data[0].other
+            let magnitude = decodedData.data[0].m
+            let longtitude = decodedData.data[0].lon
+            let latitude = decodedData.data[0].lat
+            let depth = decodedData.data[0].depth
+            let date = decodedData.data[0].time
             
-            let magnitudeColor = getRelatedColorForMagnitude(magnitudeLevel: magnitude)
+            let earthquakeTracker = EarthquakeTrackerModel(magnitude: magnitude, longitude: longtitude, latitude: latitude, location: location, depth: depth, date: date)
+            
+//            let magnitudeColor = earthquakeTracker.colorOfMagnitude
+            return earthquakeTracker
             
         } catch {
-            print(error)
+            self.delegate?.didFailWithError(error: error)
+            return nil
         }
     }
     
-    func getRelatedColorForMagnitude(magnitudeLevel: Double) -> UIColor {
-        switch magnitudeLevel {
-        case 0..<3:
-            return .white
-        case 3..<4:
-            return .orange
-        case 4..<5:
-            return .green
-        case 5..<6:
-            return .blue
-        case 6..<7:
-            return .purple
-        case 7...:
-            return .red
-        default:
-            return .black
-        }
-    }
+    
     
 }
 

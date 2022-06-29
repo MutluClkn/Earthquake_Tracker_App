@@ -10,7 +10,7 @@ import SnapKit
 import Lottie
 import MapKit
 
-class HomeViewController: UIViewController, MKMapViewDelegate {
+class HomeViewController: UIViewController, MKMapViewDelegate, EarthquakeTrackerDelegate {
 
     // MARK: - Fetching datas from HomeProperties.swift
     let properties = HomeVcComponents()
@@ -20,6 +20,7 @@ class HomeViewController: UIViewController, MKMapViewDelegate {
     
     // API Caller
     private var api = APICaller()
+    
     
     // AnimationView
     let animationView = AnimationView()
@@ -40,42 +41,78 @@ class HomeViewController: UIViewController, MKMapViewDelegate {
         view.addSubview(properties.latestEarthquakeLabel)
         view.addSubview(properties.dateAndTimeLabel)
 
-        //Map
+        // Map
         view.addSubview(mapProperties.mapView)
         mapProperties.mapView.delegate = self
         
         // Animation funcs
-        magnitudeAnimation()
-        depthAnimation()
-        pinAnimation()
+        magnitudeAnimation("magnitude")
+        depthAnimation("depth")
+        pinAnimation("location")
         
         constraints()
         
-        properties.dateAndTimeLabel.text = ""
+        // EarthquakeTrackerModel & APICaller
+        api.delegate = self
         
         api.performRequest(urlString: api.earthquakeURL)
         
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        // To keep animate after changing views.
+        magnitudeAnimation("magnitude")
+        depthAnimation("depth")
+        pinAnimation("location")
+    }
+    
+    // MARK: - Updating UI by services
+    func didUpdateView (_ apiCaller : APICaller, tracker : EarthquakeTrackerModel){
+        DispatchQueue.main.async {
+            self.properties.magnitudeLevel.text = tracker.magnitude
+            self.properties.citySubtitle.text = tracker.location
+            self.properties.depthLevel.text = tracker.depth
+            self.properties.dateAndTimeLabel.text = tracker.date
+            let annotation = MKPointAnnotation()
+            annotation.title = tracker.location
+            if let latitude = Double(tracker.latitude){
+                if let longtitude = Double(tracker.longitude){
+                    let coordinate = CLLocationCoordinate2D(latitude: latitude, longitude: longtitude)
+                    annotation.coordinate = coordinate
+                    self.mapProperties.mapView.addAnnotation(annotation)
+                    
+                    let center = CLLocationCoordinate2D(latitude: latitude, longitude: longtitude)//38 35
+                    let span = MKCoordinateSpan(latitudeDelta: 5, longitudeDelta: 5)
+                    let region = MKCoordinateRegion(center: center, span: span)
+                    self.mapProperties.mapView.setRegion(region, animated: true)
+                }
+            }
+        }
+    }
+    func didFailWithError(error: Error) {
+        print(error)
+    }
+    
     // MARK: - Animation Settings
-    private func magnitudeAnimation(){
-        magnitudeAnimationView.animation = Animation.named("magnitude")
+    private func magnitudeAnimation(_ name: String){
+        magnitudeAnimationView.animation = Animation.named(name)
         magnitudeAnimationView.backgroundColor = .systemBackground
         magnitudeAnimationView.contentMode = .scaleAspectFit
         magnitudeAnimationView.loopMode = .loop
         magnitudeAnimationView.play()
         view.addSubview(magnitudeAnimationView)
     }
-    private func depthAnimation(){
-        depthAnimationView.animation = Animation.named("depth")
+    private func depthAnimation(_ name: String){
+        depthAnimationView.animation = Animation.named(name)
         depthAnimationView.backgroundColor = .systemBackground
         depthAnimationView.contentMode = .scaleAspectFit
         depthAnimationView.loopMode = .loop
         depthAnimationView.play()
         view.addSubview(depthAnimationView)
     }
-    private func pinAnimation(){
-        cityAnimationView.animation = Animation.named("location")
+    private func pinAnimation(_ name: String){
+        cityAnimationView.animation = Animation.named(name)
         cityAnimationView.backgroundColor = .systemBackground
         cityAnimationView.contentMode = .scaleAspectFit
         cityAnimationView.loopMode = .loop
@@ -90,7 +127,7 @@ class HomeViewController: UIViewController, MKMapViewDelegate {
             make.top.equalTo(view)
             make.right.equalTo(view)
             make.left.equalTo(view)
-            make.height.equalTo(view.frame.height * 0.6)
+            make.height.equalTo(view.frame.height * 0.45)
         }
         
         properties.latestEarthquakeLabel.snp.makeConstraints { make in
@@ -112,8 +149,9 @@ class HomeViewController: UIViewController, MKMapViewDelegate {
         
         properties.magnitudeLabel.snp.makeConstraints { make in
             make.top.equalTo(magnitudeAnimationView.snp_bottomMargin).offset(10)
-            make.left.equalTo(view).offset(15)
-            make.right.equalTo(properties.cityLabel.snp_leftMargin).offset(-15)
+            make.left.equalTo(view)
+            make.right.equalTo(properties.depthLabel.snp_leftMargin)
+            make.width.equalTo(view.frame.width / 2)
         }
         
         properties.magnitudeLevel.snp.makeConstraints { make in
@@ -130,8 +168,7 @@ class HomeViewController: UIViewController, MKMapViewDelegate {
         
         properties.depthLabel.snp.makeConstraints { make in
             make.centerY.equalTo(properties.magnitudeLabel)
-            make.right.equalTo(view).offset(-15)
-            make.left.equalTo(properties.cityLabel.snp_rightMargin).offset(15)
+            make.right.equalTo(view)
         }
         
         properties.depthLevel.snp.makeConstraints { make in
@@ -140,14 +177,15 @@ class HomeViewController: UIViewController, MKMapViewDelegate {
         }
         
         cityAnimationView.snp.makeConstraints { make in
-            make.centerY.equalTo(depthAnimationView)
+            make.top.equalTo(properties.depthLevel.snp_bottomMargin).offset(10)
             make.width.equalTo(50)
             make.height.equalTo(50)
             make.centerX.equalTo(properties.cityLabel)
         }
         
         properties.cityLabel.snp.makeConstraints { make in
-            make.centerY.equalTo(properties.depthLabel)
+            
+            make.top.equalTo(cityAnimationView.snp_bottomMargin).offset(10)
             make.centerX.equalTo(view.snp.centerX)
         }
         

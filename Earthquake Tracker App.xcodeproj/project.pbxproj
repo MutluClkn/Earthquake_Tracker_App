@@ -25,8 +25,7 @@
 		FA72DEA12863B1970082BBE0 /* HomeVcComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA72DEA02863B1970082BBE0 /* HomeVcComponents.swift */; };
 		FA72DEA52863B3E80082BBE0 /* HomeVcCellComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA72DEA42863B3E80082BBE0 /* HomeVcCellComponents.swift */; };
 		FAA2CC4128685DC300A24BF8 /* APICaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA2CC4028685DC300A24BF8 /* APICaller.swift */; };
-		FAA2CC442868691400A24BF8 /* AnnotationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA2CC432868691400A24BF8 /* AnnotationViewModel.swift */; };
-		FAA2CC46286894AD00A24BF8 /* EarthquakeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA2CC45286894AD00A24BF8 /* EarthquakeViewModel.swift */; };
+		FAF85BA0286C699E0068D24C /* EarthquakeTrackerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF85B9F286C699E0068D24C /* EarthquakeTrackerModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,8 +47,7 @@
 		FA72DEA02863B1970082BBE0 /* HomeVcComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVcComponents.swift; sourceTree = "<group>"; };
 		FA72DEA42863B3E80082BBE0 /* HomeVcCellComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVcCellComponents.swift; sourceTree = "<group>"; };
 		FAA2CC4028685DC300A24BF8 /* APICaller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APICaller.swift; sourceTree = "<group>"; };
-		FAA2CC432868691400A24BF8 /* AnnotationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnotationViewModel.swift; sourceTree = "<group>"; };
-		FAA2CC45286894AD00A24BF8 /* EarthquakeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EarthquakeViewModel.swift; sourceTree = "<group>"; };
+		FAF85B9F286C699E0068D24C /* EarthquakeTrackerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EarthquakeTrackerModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,7 +86,6 @@
 				FAA2CC3F28685DAC00A24BF8 /* Services */,
 				FA3EA94A286732F90092B078 /* Models */,
 				FA72DEA22863B1D60082BBE0 /* Views */,
-				FAA2CC42286868FE00A24BF8 /* ViewModels */,
 				FA1F00F128637263002EED7A /* Info.plist */,
 			);
 			path = "Earthquake Tracker App";
@@ -126,6 +123,7 @@
 			isa = PBXGroup;
 			children = (
 				FA3EA94B286733080092B078 /* EarthquakeTracker.swift */,
+				FAF85B9F286C699E0068D24C /* EarthquakeTrackerModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -176,15 +174,6 @@
 				FAA2CC4028685DC300A24BF8 /* APICaller.swift */,
 			);
 			path = Services;
-			sourceTree = "<group>";
-		};
-		FAA2CC42286868FE00A24BF8 /* ViewModels */ = {
-			isa = PBXGroup;
-			children = (
-				FAA2CC432868691400A24BF8 /* AnnotationViewModel.swift */,
-				FAA2CC45286894AD00A24BF8 /* EarthquakeViewModel.swift */,
-			);
-			path = ViewModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -274,9 +263,8 @@
 				FA72DE9D2863AA890082BBE0 /* MapVcComponents.swift in Sources */,
 				FA72DE97286398D10082BBE0 /* TabBarController.swift in Sources */,
 				FA1F00E12863725F002EED7A /* AppDelegate.swift in Sources */,
-				FAA2CC46286894AD00A24BF8 /* EarthquakeViewModel.swift in Sources */,
 				FA3EA94928672D020092B078 /* TableViewViewController.swift in Sources */,
-				FAA2CC442868691400A24BF8 /* AnnotationViewModel.swift in Sources */,
+				FAF85BA0286C699E0068D24C /* EarthquakeTrackerModel.swift in Sources */,
 				FA1F00E32863725F002EED7A /* SceneDelegate.swift in Sources */,
 				FAA2CC4128685DC300A24BF8 /* APICaller.swift in Sources */,
 				FA3EA94C286733080092B078 /* EarthquakeTracker.swift in Sources */,

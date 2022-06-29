@@ -8,15 +8,14 @@
 import Foundation
 
 struct EarthquakeTracker : Codable {
-    let result: [Result]
+    let data: [Datum]
 }
 
-struct Result : Codable {
-    let mag, lng, lat: Double
-    let lokasyon: String
-    let depth: Double
-    let title: String
-    let date: String
+struct Datum : Codable {
+    let m, lon, lat: String
+    let other: String
+    let depth: String
+    let time: String
 }
 
 
