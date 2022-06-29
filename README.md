@@ -8,4 +8,4 @@ An app that allows the user to track the real-time latest earthquake. The source
 - Fetch the data from AFAD API.
 
 # GIF
-<img src="https://github.com/MutluClkn/Earthquake_Tracker_App/blob/main/SS/app.gif " width="250">
+<img src="https://github.com/MutluClkn/Earthquake_Tracker_App/blob/main/SS/appGif.gif " width="250">
