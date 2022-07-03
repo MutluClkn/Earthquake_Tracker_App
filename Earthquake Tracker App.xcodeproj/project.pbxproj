@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FA16B4CD287177E9004CE9EA /* location.json in Resources */ = {isa = PBXBuildFile; fileRef = FA16B4CC287177E9004CE9EA /* location.json */; };
+		FA16B4CF287177EE004CE9EA /* depth.json in Resources */ = {isa = PBXBuildFile; fileRef = FA16B4CE287177EE004CE9EA /* depth.json */; };
+		FA16B4D1287177F2004CE9EA /* magnitude.json in Resources */ = {isa = PBXBuildFile; fileRef = FA16B4D0287177F2004CE9EA /* magnitude.json */; };
 		FA1F00E12863725F002EED7A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1F00E02863725F002EED7A /* AppDelegate.swift */; };
 		FA1F00E32863725F002EED7A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1F00E22863725F002EED7A /* SceneDelegate.swift */; };
 		FA1F00E52863725F002EED7A /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1F00E42863725F002EED7A /* HomeViewController.swift */; };
@@ -16,9 +19,6 @@
 		FA3EA93F286713220092B078 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = FA3EA93E286713220092B078 /* Lottie */; };
 		FA3EA94928672D020092B078 /* TableViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3EA94828672D020092B078 /* TableViewViewController.swift */; };
 		FA3EA94C286733080092B078 /* EarthquakeTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3EA94B286733080092B078 /* EarthquakeTracker.swift */; };
-		FA3EA95728673B720092B078 /* magnitude.json in Resources */ = {isa = PBXBuildFile; fileRef = FA3EA95628673B720092B078 /* magnitude.json */; };
-		FA3EA95F286742300092B078 /* depth.json in Resources */ = {isa = PBXBuildFile; fileRef = FA3EA95E286742300092B078 /* depth.json */; };
-		FA3EA967286764DB0092B078 /* location.json in Resources */ = {isa = PBXBuildFile; fileRef = FA3EA966286764DB0092B078 /* location.json */; };
 		FA72DE95286395950082BBE0 /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA72DE94286395950082BBE0 /* HomeTableViewCell.swift */; };
 		FA72DE97286398D10082BBE0 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA72DE96286398D10082BBE0 /* TabBarController.swift */; };
 		FA72DE9D2863AA890082BBE0 /* MapVcComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA72DE9C2863AA890082BBE0 /* MapVcComponents.swift */; };
@@ -29,6 +29,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FA16B4CC287177E9004CE9EA /* location.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = location.json; path = ../../../../Downloads/location.json; sourceTree = "<group>"; };
+		FA16B4CE287177EE004CE9EA /* depth.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = depth.json; path = ../../../../Downloads/depth.json; sourceTree = "<group>"; };
+		FA16B4D0287177F2004CE9EA /* magnitude.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = magnitude.json; path = ../../../../Downloads/magnitude.json; sourceTree = "<group>"; };
 		FA1F00DD2863725F002EED7A /* Earthquake Tracker App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Earthquake Tracker App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA1F00E02863725F002EED7A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FA1F00E22863725F002EED7A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -38,9 +41,6 @@
 		FA1F00F128637263002EED7A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FA3EA94828672D020092B078 /* TableViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewViewController.swift; sourceTree = "<group>"; };
 		FA3EA94B286733080092B078 /* EarthquakeTracker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EarthquakeTracker.swift; sourceTree = "<group>"; };
-		FA3EA95628673B720092B078 /* magnitude.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = magnitude.json; path = ../../../../../../Downloads/magnitude.json; sourceTree = "<group>"; };
-		FA3EA95E286742300092B078 /* depth.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = depth.json; path = ../../../../../../Downloads/depth.json; sourceTree = "<group>"; };
-		FA3EA966286764DB0092B078 /* location.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = location.json; path = ../../../../../../Downloads/location.json; sourceTree = "<group>"; };
 		FA72DE94286395950082BBE0 /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
 		FA72DE96286398D10082BBE0 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		FA72DE9C2863AA890082BBE0 /* MapVcComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapVcComponents.swift; sourceTree = "<group>"; };
@@ -131,9 +131,9 @@
 		FA3EA9532867389C0092B078 /* Animations */ = {
 			isa = PBXGroup;
 			children = (
-				FA3EA95E286742300092B078 /* depth.json */,
-				FA3EA95628673B720092B078 /* magnitude.json */,
-				FA3EA966286764DB0092B078 /* location.json */,
+				FA16B4CC287177E9004CE9EA /* location.json */,
+				FA16B4CE287177EE004CE9EA /* depth.json */,
+				FA16B4D0287177F2004CE9EA /* magnitude.json */,
 			);
 			path = Animations;
 			sourceTree = "<group>";
@@ -242,11 +242,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FA3EA95728673B720092B078 /* magnitude.json in Resources */,
 				FA1F00F028637263002EED7A /* LaunchScreen.storyboard in Resources */,
+				FA16B4D1287177F2004CE9EA /* magnitude.json in Resources */,
+				FA16B4CD287177E9004CE9EA /* location.json in Resources */,
 				FA1F00ED28637263002EED7A /* Assets.xcassets in Resources */,
-				FA3EA95F286742300092B078 /* depth.json in Resources */,
-				FA3EA967286764DB0092B078 /* location.json in Resources */,
+				FA16B4CF287177EE004CE9EA /* depth.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

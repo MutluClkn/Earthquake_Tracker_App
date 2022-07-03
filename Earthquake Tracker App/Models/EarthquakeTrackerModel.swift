@@ -9,6 +9,7 @@ import Foundation
 import UIKit
 
 struct EarthquakeTrackerModel {
+    let newData : [Datum]
     let magnitude : String
     let longitude : String
     let latitude : String
